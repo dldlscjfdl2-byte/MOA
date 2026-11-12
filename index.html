@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MOA — 함께하는 기부</title>
+  <meta name="description" content="MOA(모아)는 친구, 가족, 지인과 함께 공동의 기부 목표를 설정하고 참여하는 소액 기부 플랫폼입니다.">
+  <link rel="icon" href="assets/logo/logo-green.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 스크롤 진행 게이지: 기부 달성률처럼 차오름 -->
+  <div class="gauge" aria-hidden="true">
+    <div class="gauge__fill"></div>
+    <div class="gauge__label"><span class="gauge__num">0</span>% 모았어요</div>
+  </div>
+  <div class="toast" role="status" aria-live="polite">🎉 100% 모았어요!</div>
+
+  <header class="nav">
+    <a href="#top" class="nav__logo" aria-label="MOA 처음으로">
+      <svg viewBox="0 0 100 50" aria-hidden="true"><use href="#logo-a"/><use href="#logo-b"/></svg>
+      <span>MOA</span>
+    </a>
+    <nav class="nav__links" aria-label="섹션 이동">
+      <a href="#background">Background</a>
+      <a href="#research">Research</a>
+      <a href="#persona">Persona</a>
+      <a href="#design">Design</a>
+      <a href="#function">Function</a>
+    </nav>
+  </header>
+
+  <!-- 로고 심볼 정의 (퍼즐 두 조각) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <path id="logo-a" d="M51.429 33.7265H48.5435C43.7061 33.7265 39.784 29.8309 39.784 25.0261C39.784 20.2214 43.7061 16.3257 48.5435 16.3257H48.5893C49.6236 16.3257 50.4611 15.4939 50.4611 14.4666V7.58671C50.4611 3.39561 47.0401 0 42.8228 0H7.63827C3.42097 0 0 3.39788 0 7.58671V41.1655C0 45.3566 3.42097 48.7522 7.63827 48.7522H51.4267C55.6051 48.7522 58.9918 45.3884 58.9918 41.2382C58.9918 37.0881 55.6051 33.7243 51.4267 33.7243L51.429 33.7265ZM38.2074 33.0129C38.2074 35.1675 36.4477 36.9153 34.2784 36.9153H16.1827C14.0134 36.9153 12.2537 35.1675 12.2537 33.0129V15.7416C12.2537 13.587 14.0134 11.8392 16.1827 11.8392H34.2784C36.4477 11.8392 38.2074 13.587 38.2074 15.7416V33.0129Z"/>
+      <path id="logo-b" d="M74.8564 0.0545479C63.3578 0.0545479 53.6624 7.7208 50.667 18.1895H48.69C44.8914 18.1895 41.8114 21.2487 41.8114 25.0216C41.8114 28.7945 44.8914 31.8537 48.69 31.8537H49.4451C49.8936 31.7901 50.3513 31.756 50.8158 31.756C56.1818 31.756 60.5341 36.0766 60.5341 41.4087C60.5341 42.6928 60.2801 43.9179 59.8201 45.0384C64.0146 48.1522 69.2158 50 74.8564 50C88.7417 50 100 38.8199 100 25.0261C100 11.2323 88.7417 0.0545479 74.8564 0.0545479ZM74.8221 37.7585C67.7422 37.7585 62.0032 32.0583 62.0032 25.0261C62.0032 17.994 67.7422 12.2937 74.8221 12.2937C81.902 12.2937 87.641 17.994 87.641 25.0261C87.641 32.0583 81.902 37.7585 74.8221 37.7585Z"/>
+    </defs>
+  </svg>
+
+  <main id="top">
+
+    <!-- ① HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <canvas class="hero__particles" aria-hidden="true"></canvas>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">Hansei University · UX/UI Design</p>
+          <h1 class="hero__brand" id="hero-title">
+            <svg class="hero__logo" viewBox="0 0 100 50" aria-hidden="true">
+              <use class="piece piece--a" href="#logo-a"/>
+              <use class="piece piece--b" href="#logo-b"/>
+            </svg>
+            <span class="hero__word">MOA</span>
+          </h1>
+          <p class="hero__headline">함께하는 기부를<br>일상의 새로운 경험으로</p>
+          <p class="hero__desc">MOA(모아)는 친구, 가족, 지인과 함께 공동의 기부 목표를 설정하고 참여하는 소액 기부 플랫폼입니다. 모임 생성과 채팅으로 서로의 참여를 공유하고, 업적 카드와 스토리로 나눔의 순간을 기록합니다. 기부금의 사용 내역과 결과를 시각적으로 보여주어 기부가 만든 변화를 확인할 수 있도록 설계했습니다.</p>
+          <p class="hero__credit">202310630 Lee In Chol</p>
+        </div>
+        <div class="hero__visual">
+          <img class="hero__phones" src="assets/mockup/hero-phones.webp" width="2400" height="1800" alt="MOA 앱의 홈 화면과 모임 화면을 보여주는 스마트폰 두 대">
+        </div>
+      </div>
+      <a href="#background" class="hero__scroll" aria-label="아래로 스크롤"><span></span>Scroll</a>
+    </section>
+
+    <!-- ② BACKGROUND -->
+    <section class="section bg" id="background">
+      <div class="wrap">
+        <p class="label" data-reveal>01 · Background</p>
+        <h2 class="statement">
+          <span class="line"><span>기부의 필요성에는 공감하지만,</span></span>
+          <span class="line"><span>적은 금액이 <mark>실제로 도움이 될지</mark></span></span>
+          <span class="line"><span>고민하며 망설이는 사람들이 있습니다.</span></span>
+        </h2>
+        <div class="bg__grid">
+          <p data-reveal>또한 기부를 시작하더라도 지속적인 참여로 이어지기 어려운 경우가 많습니다.</p>
+          <p data-reveal>MOA(모아)는 이 문제에 주목해 <strong class="hl">혼자 하는 기부</strong>를 <strong class="hl hl--green">친구와 가족이 함께하는 경험</strong>으로 넓히고자 합니다. 작은 마음이 모여 만드는 변화를 확인하고, 일상 속에서 자연스럽게 나눔을 이어갈 수 있는 서비스를 제안합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ③ SITUATION → GOAL -->
+    <section class="section sg" aria-labelledby="sg-title">
+      <div class="wrap">
+        <p class="label" data-reveal>02 · Situation &amp; Goal</p>
+        <h2 class="title" id="sg-title" data-reveal>혼자에서, 함께로</h2>
+        <div class="sg__flow">
+          <article class="sg__card sg__card--situation">
+            <span class="sg__tag">Situation</span>
+            <p>적은 금액이 도움이 될지 망설이고, 시작해도 꾸준히 이어가기 어려운 <strong>혼자 하는 기부</strong></p>
+          </article>
+          <div class="sg__arrow" aria-hidden="true">
+            <svg viewBox="0 0 120 24"><path class="sg__line" d="M2 12 H110"/><path class="sg__head" d="M100 3 L114 12 L100 21"/></svg>
+          </div>
+          <article class="sg__card sg__card--goal">
+            <span class="sg__tag">Goal</span>
+            <p>혼자 하는 기부의 부담을 넘어, 친구와 가족이 함께 작은 마음을 모으고 서로의 참여를 응원하며 <strong>기부를 일상 속 지속적인 나눔</strong>으로 만드는 것</p>
+          </article>
+        </div>
+        <p class="sg__summary" data-reveal>MOA(모아)는 단순히 기부금을 전달하는 것을 넘어, 친구와 가족이 함께 기부에 참여하고 서로의 마음을 나누는 경험을 제공합니다. 작은 기부가 모여 만드는 변화를 직접 확인하고, 부담 없이 나눔을 이어가며 기부를 자연스러운 습관으로 만드는 것을 목표로 합니다.</p>
+      </div>
+    </section>
+
+    <!-- ④ RESEARCH -->
+    <section class="section research" id="research" aria-labelledby="research-title">
+      <div class="wrap">
+        <p class="label" data-reveal>03 · Research</p>
+        <h2 class="title" id="research-title" data-reveal>데이터가 말하는<br>함께하는 기부의 힘</h2>
+
+        <div class="charts">
+          <!-- A. 20–30대 -->
+          <article class="chart chart--bars" data-reveal>
+            <h3>20–30대의 기부 경험과 기부 의사</h3>
+            <div class="bars" role="img" aria-label="기부 경험률 18.7%와 25.4%, 향후 기부 의사 35.3%와 40.2%">
+              <div class="bars__axis" aria-hidden="true"><span>50%</span><span>37.5%</span><span>25%</span><span>12.5%</span><span>0%</span></div>
+              <div class="bars__plot">
+                <div class="bars__group">
+                  <div class="bar bar--gray" style="--v:18.7"><em data-count="18.7" data-decimals="1" data-suffix="%">18.7%</em></div>
+                  <div class="bar" style="--v:35.3"><em data-count="35.3" data-decimals="1" data-suffix="%">35.3%</em></div>
+                </div>
+                <div class="bars__group">
+                  <div class="bar bar--gray" style="--v:25.4"><em data-count="25.4" data-decimals="1" data-suffix="%">25.4%</em></div>
+                  <div class="bar" style="--v:40.2"><em data-count="40.2" data-decimals="1" data-suffix="%">40.2%</em></div>
+                </div>
+              </div>
+            </div>
+            <ul class="legend"><li><i class="sw sw--gray"></i>기부 경험률</li><li><i class="sw"></i>향후 기부 의사</li></ul>
+            <p class="chart__insight">기부를 일상 속에서 쉽게 시작할 수 있는 참여 구조가 필요</p>
+            <p class="source">출처: 국가데이터처, 「2025년 사회조사」, 2025</p>
+          </article>
+
+          <!-- B. 타인의 참여 -->
+          <article class="chart chart--compare" data-reveal>
+            <h3>다른 사람의 참여가 기부에 미치는 영향</h3>
+            <div class="hbars">
+              <div class="hbar">
+                <span class="hbar__name">기존 기부 금액 기준</span>
+                <div class="hbar__track"><div class="hbar__fill hbar__fill--base"></div></div>
+                <span class="hbar__val" data-count="100" data-suffix="%">100%</span>
+              </div>
+              <div class="hbar">
+                <span class="hbar__name">타인의 기부 정보 제공</span>
+                <div class="hbar__track"><div class="hbar__fill hbar__fill--up"></div><span class="hbar__plus">+17%</span></div>
+                <span class="hbar__val hbar__val--green" data-count="117" data-suffix="%">117%</span>
+              </div>
+            </div>
+            <p class="chart__note">기부 금액 약 17% 증가</p>
+            <p class="chart__insight">다른 사람의 참여를 확인하고 함께 목표를 이루어가는 공동 기부 경험이 필요</p>
+            <p class="source">출처: van Teunenbroek &amp; Bekkers, “Follow the Crowd: Social Information and Crowdfunding Donations in a Large Field Experiment”, 2020</p>
+          </article>
+
+          <!-- C. 기부하지 않는 이유 -->
+          <article class="chart chart--reasons" data-reveal>
+            <h3>기부하지 않는 주요 이유</h3>
+            <div class="reasons">
+              <div class="donut">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="donut__bg" cx="60" cy="60" r="50"/>
+                  <circle class="donut__fg" cx="60" cy="60" r="50" pathLength="100"/>
+                </svg>
+                <div class="donut__center">
+                  <strong data-count="53" data-suffix="%">53%</strong>
+                  <span>경제적 여유 부족</span>
+                </div>
+              </div>
+              <ul class="reasons__list">
+                <li><span>기부 단체 신뢰 부족</span><i style="--v:29"></i><b data-count="29" data-suffix="%">29%</b></li>
+                <li><span>기부 효과에 대한 의문</span><i style="--v:12"></i><b data-count="12" data-suffix="%">12%</b></li>
+                <li><span>기부 방법을 모름</span><i style="--v:3"></i><b data-count="3" data-suffix="%">3%</b></li>
+                <li><span>기타</span><i style="--v:3"></i><b data-count="3" data-suffix="%">3%</b></li>
+              </ul>
+            </div>
+            <p class="chart__insight">소액으로도 부담 없이 참여할 수 있는 간편하고 투명한 기부 방식이 필요</p>
+            <p class="source">출처: 한국리서치, 「기부 활동 인식과 향후 기부 활성화를 위한 방안은?」, 2025년 조사</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑤ PERSONA -->
+    <section class="section persona" id="persona" aria-labelledby="persona-title">
+      <div class="wrap">
+        <p class="label" data-reveal>04 · User Persona</p>
+        <h2 class="title" id="persona-title" data-reveal>누구를 위한 MOA인가요?</h2>
+        <div class="personas">
+          <article class="pcard pcard--left">
+            <div class="pcard__img"><img src="assets/persona/seoyeon.webp" width="600" height="548" alt="노트북을 든 대학생 김서연 일러스트" loading="lazy"></div>
+            <div class="pcard__body">
+              <h3>김서연 <small>24세 · 대학생</small></h3>
+              <div class="pcard__row pcard__needs"><span>Needs</span><p>친구들과 부담 없이 기부하고 나눔의 경험을 공유하고 싶음</p></div>
+              <div class="pcard__link" aria-hidden="true"><svg viewBox="0 0 10 40"><path d="M5 0 V40"/></svg></div>
+              <div class="pcard__row pcard__service"><span>Service</span><p>기부 모임 생성 및 채팅, 스토리 공유</p></div>
+            </div>
+          </article>
+          <article class="pcard pcard--right">
+            <div class="pcard__img"><img src="assets/persona/junho.webp" width="600" height="548" alt="스마트폰을 든 직장인 이준호 일러스트" loading="lazy"></div>
+            <div class="pcard__body">
+              <h3>이준호 <small>31세 · 마케팅 직장인</small></h3>
+              <div class="pcard__row pcard__needs"><span>Needs</span><p>간편하게 소액 기부에 참여하고 기부의 결과를 확인하고 싶음</p></div>
+              <div class="pcard__link" aria-hidden="true"><svg viewBox="0 0 10 40"><path d="M5 0 V40"/></svg></div>
+              <div class="pcard__row pcard__service"><span>Service</span><p>간편 기부, 공동 목표 및 기부 결과 시각화</p></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑥ DESIGN SYSTEM -->
+    <section class="section design" id="design" aria-labelledby="design-title">
+      <div class="wrap">
+        <p class="label" data-reveal>05 · Design System</p>
+        <h2 class="title" id="design-title" data-reveal>작은 마음이 하나로 모이는 디자인</h2>
+
+        <div class="ds">
+          <article class="ds__block ds__type" data-reveal>
+            <h3 class="ds__label">Typography</h3>
+            <p class="type__name">Pretendard<br>프리텐다드</p>
+            <p class="type__live" aria-label="함께라서 더 의미 있게"><span class="type__text">함께라서 더 의미 있게</span><span class="caret" aria-hidden="true"></span></p>
+            <ul class="type__weights">
+              <li style="font-weight:100">함께라서 더 의미 있게 <small>Thin</small></li>
+              <li style="font-weight:400">함께라서 더 의미 있게 <small>Regular</small></li>
+              <li style="font-weight:500">함께라서 더 의미 있게 <small>Medium</small></li>
+              <li style="font-weight:700">함께라서 더 의미 있게 <small>Bold</small></li>
+            </ul>
+          </article>
+
+          <article class="ds__block ds__logo" data-reveal>
+            <h3 class="ds__label">Logo &amp; Naming</h3>
+            <div class="logo-stage">
+              <svg class="logo-big" viewBox="0 0 100 50" aria-label="MOA 로고">
+                <use class="lp lp--a" href="#logo-a"/>
+                <use class="lp lp--b" href="#logo-b"/>
+              </svg>
+            </div>
+            <div class="logo-variants">
+              <img src="assets/logo/logo-gray.svg" alt="회색 MOA 로고" width="44" height="22">
+              <img src="assets/logo/logo-green.svg" alt="초록 MOA 로고" width="44" height="22">
+            </div>
+            <p>퍼즐이 서로 맞춰지는 형태로 작은 마음들이 하나로 모이는 모습을 표현했습니다. 두 개의 연결된 형태는 함께하는 기부와 나눔의 가치를 상징합니다. <strong>MOA(모아)</strong>는 ‘모으다’와 ‘함께’의 의미를 담은 이름으로, 작은 마음이 모여 더 큰 변화를 만든다는 뜻을 담고 있습니다.</p>
+          </article>
+
+          <article class="ds__block ds__color" data-reveal>
+            <h3 class="ds__label">Color</h3>
+            <div class="chips">
+              <button class="chip chip--main" data-hex="#03C75A"><span>Main Green</span><code>03C75A</code></button>
+              <button class="chip chip--sub" data-hex="#88CBA5"><span>Sub Green</span><code>88CBA5</code></button>
+              <button class="chip chip--white" data-hex="#FFFFFF"><span>White</span><code>FFFFFF</code></button>
+            </div>
+            <p class="chips__hint">색상을 누르면 코드가 복사돼요</p>
+          </article>
+
+          <article class="ds__block ds__icons" data-reveal>
+            <h3 class="ds__label">3D Icon</h3>
+            <div class="icons">
+              <img src="assets/icons/coin.webp" alt="동전 아이콘" loading="lazy">
+              <img src="assets/icons/first-donation.webp" alt="첫 기부 아이콘" loading="lazy">
+              <img src="assets/icons/heart.webp" alt="하트 아이콘" loading="lazy">
+              <img src="assets/icons/hands.webp" alt="손 아이콘" loading="lazy">
+              <img src="assets/icons/plant.webp" alt="식물 아이콘" loading="lazy">
+              <img src="assets/icons/sprout.webp" alt="새싹 아이콘" loading="lazy">
+              <img src="assets/icons/first-group.webp" alt="첫 모임 기부 아이콘" loading="lazy">
+              <img src="assets/icons/running.webp" alt="달리는 아이콘" loading="lazy">
+              <img src="assets/icons/bell.webp" alt="종 아이콘" loading="lazy">
+              <img src="assets/icons/progress.webp" alt="기부 진행 확인 아이콘" loading="lazy">
+              <img src="assets/icons/earth.webp" alt="지구 아이콘" loading="lazy">
+              <img src="assets/icons/piggy.webp" alt="저금통 아이콘" loading="lazy">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑦–⑩ MAIN FUNCTION -->
+    <section class="section func" id="function" aria-labelledby="func-title">
+      <div class="wrap">
+        <p class="label" data-reveal>06 · Main Function</p>
+        <h2 class="title" id="func-title" data-reveal>MOA로 할 수 있는 일</h2>
+      </div>
+
+      <div class="wrap fns">
+        <article class="fn" data-i="0">
+          <div class="fn__text">
+            <span class="fn__num">01</span>
+            <h3 class="fn__title"><em>기부</em>하고,<br>쓰임까지 확인해요</h3>
+            <p class="fn__desc">1,000원부터 간편하게 기부하고, 기부금이 어디에 어떻게 쓰였는지 사진과 데이터로 확인해요.</p>
+          </div>
+          <div class="fn__gallery">
+            <button class="shot" data-full="assets/screens/full/f1-home.webp" data-bar="assets/screens/bar/f1-home.webp" aria-label="홈 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f1-home.webp" alt="" loading="lazy"></span><span class="shot__cap">홈</span></button>
+            <button class="shot" data-full="assets/screens/full/f1-detail.webp" data-bar="assets/screens/bar/f1-detail.webp" aria-label="참여 기부 상세 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f1-detail.webp" alt="" loading="lazy"></span><span class="shot__cap">참여 기부 상세</span></button>
+            <button class="shot" data-full="assets/screens/full/f1-pay.webp" aria-label="간편 결제 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f1-pay.webp" alt="" loading="lazy"></span><span class="shot__cap">간편 결제</span></button>
+            <button class="shot" data-full="assets/screens/full/f1-group-detail.webp" data-bar="assets/screens/bar/f1-group-detail.webp" aria-label="모임 기부내역 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f1-group-detail.webp" alt="" loading="lazy"></span><span class="shot__cap">모임 기부내역</span></button>
+          </div>
+        </article>
+
+        <article class="fn fn--rev" data-i="1">
+          <div class="fn__text">
+            <span class="fn__num">02</span>
+            <h3 class="fn__title"><em>친구·가족</em>과<br>기부 모임을 만들어요</h3>
+            <p class="fn__desc">모임을 만들어 공동 목표를 세우고, 멤버별 기부 현황과 달성률을 함께 확인해요.</p>
+          </div>
+          <div class="fn__gallery">
+            <button class="shot" data-full="assets/screens/full/f2-group.webp" data-bar="assets/screens/bar/f2-group.webp" aria-label="모임 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f2-group.webp" alt="" loading="lazy"></span><span class="shot__cap">모임</span></button>
+            <button class="shot" data-full="assets/screens/full/f2-add.webp" aria-label="모임 추가 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f2-add.webp" alt="" loading="lazy"></span><span class="shot__cap">모임 추가</span></button>
+            <button class="shot" data-full="assets/screens/full/f2-detail.webp" data-bar="assets/screens/bar/f2-detail.webp" aria-label="모임 기부 상세 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f2-detail.webp" alt="" loading="lazy"></span><span class="shot__cap">모임 기부 상세</span></button>
+          </div>
+        </article>
+
+        <article class="fn" data-i="2">
+          <div class="fn__text">
+            <span class="fn__num">03</span>
+            <h3 class="fn__title"><em>채팅</em>과 <em>스토리</em>로<br>나눔을 나눠요</h3>
+            <p class="fn__desc">모임 채팅으로 기부 소식을 공유하며 응원하고, 나눔의 순간을 스토리로 남겨 참여를 넓혀요.</p>
+          </div>
+          <div class="fn__gallery">
+            <button class="shot" data-full="assets/screens/full/f3-chat.webp" aria-label="모임 채팅 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f3-chat.webp" alt="" loading="lazy"></span><span class="shot__cap">모임 채팅</span></button>
+            <button class="shot" data-full="assets/screens/full/f3-story.webp" aria-label="스토리 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f3-story.webp" alt="" loading="lazy"></span><span class="shot__cap">스토리</span></button>
+            <button class="shot" data-full="assets/screens/full/f3-story-add.webp" aria-label="스토리 추가 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f3-story-add.webp" alt="" loading="lazy"></span><span class="shot__cap">스토리 추가</span></button>
+          </div>
+        </article>
+
+        <article class="fn fn--rev" data-i="3">
+          <div class="fn__text">
+            <span class="fn__num">04</span>
+            <h3 class="fn__title"><em>업적 카드</em>로<br>나눔의 성장을 기록해요</h3>
+            <p class="fn__desc">금액이 아닌 꾸준함과 참여로 업적 카드를 모으며, 나의 나눔이 자라는 과정을 확인해요.</p>
+          </div>
+          <div class="fn__gallery">
+            <button class="shot" data-full="assets/screens/full/f4-badge.webp" data-bar="assets/screens/bar/f4-badge.webp" aria-label="업적 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f4-badge.webp" alt="" loading="lazy"></span><span class="shot__cap">업적</span></button>
+            <button class="shot" data-full="assets/screens/full/f4-have.webp" data-bar="assets/screens/bar/f4-have.webp" aria-label="개인 업적 보유 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f4-have.webp" alt="" loading="lazy"></span><span class="shot__cap">개인 업적 보유</span></button>
+            <button class="shot" data-full="assets/screens/full/f4-none.webp" data-bar="assets/screens/bar/f4-none.webp" aria-label="개인 업적 미보유 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/f4-none.webp" alt="" loading="lazy"></span><span class="shot__cap">개인 업적 미보유</span></button>
+            <button class="shot shot--card" data-full="assets/screens/badge-card.webp" aria-label="업적 카드 화면 크게 보기"><span class="shot__frame"><img src="assets/screens/badge-card.webp" alt="" loading="lazy"></span><span class="shot__cap">업적 카드</span></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 화면 크게 보기 -->
+    <div class="lightbox" role="dialog" aria-modal="true" aria-label="화면 크게 보기" hidden>
+      <div class="lightbox__bg" data-close></div>
+      <figure class="lightbox__body">
+        <div class="lightbox__scroll" data-lenis-prevent><img class="lightbox__img" alt=""><img class="lightbox__bar" alt="" hidden></div>
+        <figcaption class="lightbox__cap"></figcaption>
+      </figure>
+      <button class="lightbox__btn lightbox__close" data-close aria-label="닫기">✕</button>
+      <button class="lightbox__btn lightbox__prev" aria-label="이전 화면">‹</button>
+      <button class="lightbox__btn lightbox__next" aria-label="다음 화면">›</button>
+    </div>
+
+    <!-- ENDING -->
+    <section class="ending" aria-labelledby="ending-title">
+      <div class="ending__icons" aria-hidden="true">
+        <img src="assets/icons/coin.webp" alt=""><img src="assets/icons/heart.webp" alt="">
+        <img src="assets/icons/sprout.webp" alt=""><img src="assets/icons/hands.webp" alt="">
+        <img src="assets/icons/plant.webp" alt=""><img src="assets/icons/earth.webp" alt="">
+        <img src="assets/icons/piggy.webp" alt=""><img src="assets/icons/bell.webp" alt="">
+        <img src="assets/icons/first-donation.webp" alt=""><img src="assets/icons/first-group.webp" alt="">
+        <img src="assets/icons/progress.webp" alt=""><img src="assets/icons/running.webp" alt="">
+      </div>
+      <div class="ending__center">
+        <svg class="ending__logo" viewBox="0 0 100 50" aria-hidden="true"><use href="#logo-a"/><use href="#logo-b"/></svg>
+        <h2 id="ending-title">작은 마음이 모여<br>더 큰 변화를</h2>
+        <p>함께하는 기부, MOA</p>
+      </div>
+      <footer class="footer">
+        <span>Hansei University · UX/UI Design</span>
+        <span>202310630 Lee In Chol</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
